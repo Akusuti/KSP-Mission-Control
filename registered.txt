@@ -1,0 +1,18 @@
+Name: Jebediah
+Occupation: Pilot
+Mission: None
+Location: Kerbal Space Center
+Status: Alive
+
+Name: Bill
+Occupation: Engineer
+Mission: None
+Location: Kerbal Space Center
+Status: Alive
+
+Name: Bob
+Occupation: Scientist
+Mission: None
+Location: Kerbal Space Center
+Status: Alive
+
