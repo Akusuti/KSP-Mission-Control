@@ -125,17 +125,17 @@ if choice.upper() == 'MISSION':
     missionkerbals = []
 
     kerbalamount = int(input('Enter Number: '))
+    print(' ')
     for x in range(kerbalamount):
         words = f'Enter the Name of Kerbal {x+1}.'
         for char in words:
             sleep(0.05)
             sys.stdout.write(char)
         time.sleep(0.5)
-        print('')
+        print(' ')
         kerbalname = input('Name: ')
         missionkerbals.append(kerbalname)
-
-    print(missionkerbals)
+        print(' ')
 
     words = 'Updating Kerbals...'
     for char in words:
@@ -151,7 +151,7 @@ if choice.upper() == 'MISSION':
     for x in range(len(missionkerbals)):
         for lines in registeredkerbals:
             if missionkerbals[x] in lines:
-                namefind = registeredkerbals.index(f'Name: {missionkerbals[x]}')
+                namefind = registeredkerbals.index(f'Name: {missionkerbals[x]} ')
                 registeredkerbals[namefind+2] = f'Mission: {missionname.title()}'
 
     x = 0
@@ -230,7 +230,7 @@ if choice.upper() == 'MISSION':
             for x in range(len(missionkerbals)):
                 for lines in registeredkerbals:
                     if missionkerbals[x] in lines:
-                        namefind = registeredkerbals.index(f'Name: {missionkerbals[x]}')
+                        namefind = registeredkerbals.index(f'Name: {missionkerbals[x]} ')
                         registeredkerbals[namefind+3] = f'Location: {location.title()}'
 
             x = 0
@@ -262,7 +262,7 @@ if choice.upper() == 'MISSION':
             for x in range(len(missionkerbals)):
                 for lines in registeredkerbals:
                     if kerbalchoice.title() in lines:
-                        namefind = registeredkerbals.index(f'Name: {kerbalchoice.title()}')
+                        namefind = registeredkerbals.index(f'Name: {kerbalchoice.title()} ')
                         registeredkerbals[namefind+4] = f'Status: Dead'
 
             x = 0
