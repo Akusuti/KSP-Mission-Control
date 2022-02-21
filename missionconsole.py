@@ -109,7 +109,7 @@ if choice.upper() == 'MISSION':
 
     print(' ')
 
-    missionname = input('Mission Name: ').title()
+    missionname = input('Mission Name: ')
 
     print(' ')
 
@@ -292,9 +292,21 @@ if choice.upper() == 'MISSION':
             
             missioncomplete = input('Enter a choice: ').title()
 
+            dothething = True
+
             with open('missionlogs.txt','a') as file:
                 file.write('- \n')
                 file.write(f'MISSION NAME: {missionname} \n \n')
+                file.write(f'BRIEF: \n')
+                file.write(input('Enter the purpose of the mission: '))
+                file.write('\n\n')
+                for x in range(20):
+                    achieve = input('Enter what you achieved (Type STOP to end): ').title()
+                    if achieve.upper() == 'STOP':
+                        break
+                    else:
+                        file.write(f'- {achieve}\n')
+                file.write('\n')
                 file.write('KERBALS: \n')
                 for x in range(len(missionkerbals)):
                     file.write(f'Kerbal {x+1}: {missionkerbals[x]} \n')
@@ -309,6 +321,13 @@ words = 'Thanks for using the KSA Mission Control Console. \n'
 for char in words:
     sleep(0.08)
     sys.stdout.write(char)
+
+for x in range(len(missionkerbals)):
+    for lines in registeredkerbals:
+        if missionkerbals[x] in lines:
+            namefind = registeredkerbals.index(f'Name: {missionkerbals[x]} ')
+            registeredkerbals[namefind+2] = 'Mission: None'
+            registeredkerbals[namefind+3] = 'Location: Kerbal Space Agency'
 
 input()
 
